@@ -233,6 +233,24 @@ body,
   margin-bottom: 2rem;
 }
 
+.form-component {
+  margin-bottom: 1rem;
+}
+
+.form-component label {
+  margin-right: 1rem;
+}
+
+#firstName,
+#lastName {
+  background-color: antiquewhite;
+  color: grey;
+}
+
+.edit-form Button {
+  margin: 0 1rem;
+}
+
 .account-amount {
   margin: 0;
   font-size: 2.5rem;

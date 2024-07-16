@@ -43,7 +43,7 @@ export default function NavBar() {
       <div>
           <Link to={"/User"} className="main-nav-item item1">
             <i className={`${status.connected ? 'fa fa-user-circle' : ''}`}/>
-            {status.connected ? status.firstName : ""}
+            {status.connected ? status.userName : ""}
           </Link>
           <Link to={"/SignIn"} className="main-nav-item item2">
             <i className={`fa ${status.connected ? 'fa-sign-out' : 'fa-user-circle'}`}/>
