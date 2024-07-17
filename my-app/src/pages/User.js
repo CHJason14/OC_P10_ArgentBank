@@ -3,6 +3,7 @@ import '../styles/style.css'
 import Account from '../components/Account'
 import { useSelector, useDispatch } from 'react-redux';
 import Button from '../components/Button';
+import CollectInfoUser from '../components/CollectInfoUser';
 
 export default function User() {
 
@@ -28,6 +29,24 @@ export default function User() {
       type: 'infoUser/changeName',
       payload: { userName: userName },
     });
+
+    const storageToken = sessionStorage.getItem("tokens");
+    const usernameToSend = {
+      userName : userName
+    }
+
+    fetch('http://localhost:3001/api/v1/user/profile', {
+      headers: {
+        "Authorization": 'Bearer ' + storageToken,
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "http://localhost:3001/",
+      },
+      mode: "cors",
+      method: "PUT",
+      body: JSON.stringify(usernameToSend),
+    })
+    .catch((err) => console.log(err));
+
     dispatch({
       type: 'editUserNameForm/changeForm',
       payload: {open : false},
@@ -40,6 +59,8 @@ export default function User() {
       payload: {open : false},
     });
   };
+
+  CollectInfoUser();
 
   return (
     <main className="main bg-dark">

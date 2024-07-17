@@ -25,7 +25,7 @@ const editUserNameForm = createSlice ({
     reducers: {
         changeForm: (state, action) => {
             // { type : "editUserNameForm/changeForm", payload: true }
-            state.open = action.payload; 
+            state.open = action.payload.open; 
         },
     }
 });
