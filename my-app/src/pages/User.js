@@ -4,6 +4,7 @@ import Account from '../components/Account'
 import { useSelector, useDispatch } from 'react-redux';
 import Button from '../components/Button';
 import CollectInfoUser from '../components/CollectInfoUser';
+import { Navigate } from 'react-router-dom';
 
 export default function User() {
 
@@ -62,6 +63,9 @@ export default function User() {
 
   CollectInfoUser();
 
+  const storageToken = sessionStorage.getItem("tokens");
+
+  if (storageToken) {
   return (
     <main className="main bg-dark">
       <div className="header">
@@ -103,5 +107,10 @@ export default function User() {
       <Account accountNumber="Argent Bank Credit Card (x8349)" amount="$184.30" description="Available Balance" />
       
     </main>
-  )
+    )
+  } else {
+    return (
+      <Navigate to="/SignIn" />
+    )
+  }
 }
