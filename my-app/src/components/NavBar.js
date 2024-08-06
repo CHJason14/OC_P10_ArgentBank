@@ -1,6 +1,6 @@
 import React, { useEffect} from 'react'
 import '../styles/style.css'
-import LogoBanque from '../assets/argentBankLogo.png'
+import LogoBanque from '../assets/argentBankLogo_200x54_1.webp'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 
