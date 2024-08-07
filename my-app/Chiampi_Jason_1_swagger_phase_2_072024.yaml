@@ -120,7 +120,9 @@ paths:
         "200":
           description: successful operation
           schema:
-            $ref: "#/definitions/TransactionsResponse"
+            type: array
+            items:
+              $ref: "#/definitions/TransactionsResponse"
         "400":
           description: Invalid Month value
         "401":
